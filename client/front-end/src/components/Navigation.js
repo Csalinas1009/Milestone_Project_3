@@ -2,10 +2,11 @@ import React from 'react';
 import Menu from './Menu';
 import logo from '../images/instagram-logo-illustration-958x575.png';
 import searchIcon from '../images/search_icon.png';
+import '../styles/styles.css'
 
 function Navigation() {
   return (
-    <div className='Navigation'>
+    <div className='navigation'>
         <div className='container'>
             <img className="logo" src={logo} alt="ig logo"/>
             <div className='search'>

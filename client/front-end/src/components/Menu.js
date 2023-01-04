@@ -2,6 +2,7 @@ import React from 'react';
 import home from '../images/home.png';
 import compass from '../images/compass.png';
 import notification from '../images/notification.png';
+import '../styles/styles.css'
 
 function Menu() {
   return (
