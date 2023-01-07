@@ -11,6 +11,24 @@ function Gallery() {
             title: 'test',
             text: 'test',
 
+        },
+        {
+            image: 'https://cdn.vox-cdn.com/thumbor/M1qLla2h-V_2yV_Z4nF_NHH_tjA=/1400x1400/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/18286450/usa_today_12495932.jpg',
+            title: 'test',
+            text: 'test',
+
+        },
+        {
+            image: 'https://cdn.vox-cdn.com/thumbor/M1qLla2h-V_2yV_Z4nF_NHH_tjA=/1400x1400/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/18286450/usa_today_12495932.jpg',
+            title: 'test',
+            text: 'test',
+
+        },
+        {
+            image: 'https://cdn.vox-cdn.com/thumbor/M1qLla2h-V_2yV_Z4nF_NHH_tjA=/1400x1400/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/18286450/usa_today_12495932.jpg',
+            title: 'test',
+            text: 'test',
+
         }
     ]
 
@@ -28,7 +46,7 @@ function Gallery() {
       };
     
       return(
-        <div className="">{cardData.map(renderCard)}</div>
+        <div className="gallery">{cardData.map(renderCard)}</div>
       ) 
     };
 
