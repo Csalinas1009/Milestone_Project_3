@@ -49,3 +49,22 @@ body {
     width: 25px;
     height: 25px;
 }
+
+#addPhotoInput {
+    display: none;
+  }
+  
+  .add-photo-button {
+    transform: scale(3);
+    position: fixed;
+    bottom: 5em;
+    right: 7em;
+    cursor: pointer;
+  }
+  
+  .gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    row-gap: 1.7em;
+    column-gap: 1em;
+  }
