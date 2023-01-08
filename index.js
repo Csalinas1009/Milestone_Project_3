@@ -24,7 +24,7 @@ mongoose.connect("mongodb+srv://admin:admin@cluster0.fnw7zkg.mongodb.net/test")
 .catch(err => console.error(err));
 
 app.get("/", (req,res) => {
-    res.send('testing')
+    res.send('testing once again')
 })
 
 const PORT = process.env.PORT || 5000
