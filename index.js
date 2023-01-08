@@ -19,7 +19,7 @@ app.use("/api/article", articleRoute)
 
 
 //db connection
-mongoose.connect("mongodb+srv://admin:<admin>@cluster0.fnw7zkg.mongodb.net/?retryWrites=true&w=majority")
+mongoose.connect("mongodb+srv://admin:admin@cluster0.fnw7zkg.mongodb.net/test")
 .then(() => console.log('DB connected'))
 .catch(err => console.error(err));
 
