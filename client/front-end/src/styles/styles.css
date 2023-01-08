@@ -49,3 +49,14 @@ body {
     width: 25px;
     height: 25px;
 }
+
+
+  
+  .gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    row-gap: 1.7em;
+    column-gap: 1em;
+  }
+
+  
