@@ -19,9 +19,13 @@ app.use("/api/article", articleRoute)
 
 
 //db connection
-mongoose.connect('mongodb://localhost:27017/MileStone3')
+mongoose.connect("mongodb+srv://admin:<admin>@cluster0.fnw7zkg.mongodb.net/?retryWrites=true&w=majority")
 .then(() => console.log('DB connected'))
 .catch(err => console.error(err));
+
+app.get("/", (req,res) => {
+    res.send('testing')
+})
 
 const PORT = process.env.PORT || 5000
 
