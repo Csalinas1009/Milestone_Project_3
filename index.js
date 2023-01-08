@@ -18,18 +18,14 @@ app.use(passport.initialize()) // init passport on every route call
 app.use(passport.session())    //allow passport to use "express-session"
 
 
-//Get the GOOGLE_CLIENT_ID and GOOGLE_CLIENT_SECRET from Google Developer Console
-const GOOGLE_CLIENT_ID = "200690232924-bgf4n18dh9939b6hdg8glsph28eki3nu.apps.googleusercontent.com"
-const GOOGLE_CLIENT_SECRET = "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"
-
 authUser = (request, accessToken, refreshToken, profile, done) => {
     return done(null, profile);
 }
 
 //Use "GoogleStrategy" as the Authentication Strategy
 passport.use(new GoogleStrategy({
-    clientID: GOOGLE_CLIENT_ID,
-    clientSecret: GOOGLE_CLIENT_SECRET,
+    clientID: process.env.CLIENT_ID,
+    clientSecret: process.env.CLIENT_SECRET,
     callbackURL: "http://localhost:4000/auth/google/callback",
     passReqToCallback: true
 }, authUser));

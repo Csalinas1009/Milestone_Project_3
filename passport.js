@@ -9,8 +9,8 @@ const findOrCreate = require("mongoose-findorcreate");
 var GoogleStrategy = require('passport-google-oauth20').Strategy;
 
 passport.use(new GoogleStrategy({
-    clientID: "200690232924-bgf4n18dh9939b6hdg8glsph28eki3nu.apps.googleusercontent.com",
-    clientSecret: "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",
+    clientID:process.env.clientID,
+    clientSecret: process.env.clientSecret,
     callbackURL: "http://localhost4000/auth/google/callback"
   },
   function(accessToken, refreshToken, profile, cb) {
