@@ -54,9 +54,16 @@ body {
   
   .gallery {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    row-gap: 1.7em;
-    column-gap: 1em;
+    grid-template-columns: 16rem 16rem 16rem 16rem;
+    margin-top: 15rem;
+    margin-left: 25rem;
   }
+
+  .profile {
+    display: flex;
+    margin-top: 6em;
+  }
+
+
 
   

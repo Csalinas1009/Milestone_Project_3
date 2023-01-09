@@ -9,12 +9,12 @@ function App() {
   //might have to use Axio again for image uploading, or we could use another tool for this.
   
   return (
-    <><Navigation /><div>
+    <><Navigation />
+      <div>
       <div className='container'>
       <Profile />
-      <br />
-      <Gallery />
       </div>
+      <Gallery />
     </div></>
   )
 }
