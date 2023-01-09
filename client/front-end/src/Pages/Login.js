@@ -4,7 +4,7 @@ import '../styles/styles.css';
 function Login() {
     return (
         <><div className='login-text'>
-            <img src='https://cdn-icons-png.flaticon.com/512/1/1394.png' alt='ig-logo' style={{ height: '125px', width: '125px' }}></img>
+            <img src='https://cdn-icons-png.flaticon.com/512/1/1394.png' alt='ig-logo' style={{ height: '75px', width: '75px' }}></img>
             <p>Welcome to InstaFraud, please sign in to continue!</p>
         </div><div className='google-login'>
                 <form action="http://localhost:4000/auth/google">
