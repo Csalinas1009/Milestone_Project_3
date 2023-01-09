@@ -6,7 +6,7 @@ body {
     min-width: fit-content;
 }
 
-.navigation{
+.navigation {
     position: fixed;
     top: 0;
     z-index: 2;
@@ -15,7 +15,7 @@ body {
     border-bottom: 1px solid grey;
 }
 
-.container{ 
+.container {
     padding: 1em 0 1em 0;
     display: flex;
     align-content: center;
@@ -34,7 +34,7 @@ body {
     border: 1px solid grey;
     border-radius: 26px;
     min-width: 150px;
-    display: flex; 
+    display: flex;
     align-items: center;
     justify-content: center;
 }
@@ -51,19 +51,66 @@ body {
 }
 
 
-  
-  .gallery {
+
+.gallery {
     display: grid;
     grid-template-columns: 16rem 16rem 16rem 16rem;
     margin-top: 15rem;
     margin-left: 25rem;
-  }
+}
 
-  .profile {
+.profile {
     display: flex;
     margin-top: 6em;
-  }
+}
 
+.google-button {
+    height: 40px;
+    border-width: 0;
+    background: white;
+    color: #737373;
+    border-radius: 5px;
+    white-space: nowrap;
+    box-shadow: 1px 1px 0px 1px rgba(0, 0, 0, 0.1);
+    transition-property: background-color, box-shadow;
+    transition-duration: 150ms;
+    transition-timing-function: ease-in-out;
+    padding: 0;
+    transform: scale(1.4);
+    margin-top: 100px;
+}
 
+.google-button:hover,
+.google-button:focus {
+    box-shadow: 1px 4px 5px 1px rgba(0, 0, 0, 0.2);
+    outline: none;
+    transform: scale(1.4) skewX(-0.4deg);
+}
 
-  
+.google-button:active {
+    outline: none;
+    box-shadow: 1px 4px 5px 1px rgba(0, 0, 0, 0.3);
+    transition-duration: 10ms;
+}
+
+.google-button__icon {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0px 0 8px 8px;
+    width: 18px;
+    height: 18px;
+    box-sizing: border-box;
+}
+
+.google-button__icon--plus {
+    width: 27px;
+}
+
+.google-button__text {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0 24px;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: 'Roboto', arial, sans-serif;
+}
