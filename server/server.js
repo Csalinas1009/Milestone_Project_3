@@ -8,7 +8,7 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-mongoose.connect('mongodb://localhost:27017/MileStone3', { useNewUrlParser: true, useUnifiedTopology: true });
+// mongoose.connect('mongodb://localhost:27017/MileStone3', { useNewUrlParser: true, useUnifiedTopology: true });
 mongoose.set("useCreateIndex", true);
 
 const userSchema = new mongoose.Schema({
@@ -45,16 +45,16 @@ passport.use(new GoogleStrategy({
   }
 ));
 
-app.get("/auth/google",
-  passport.authenticate("google", { scope: ["profile"] })
-);
-app.get("/auth/google/callback",
-  passport.authenticate("google", { failureRedirect: "http://localhost:3000" }),
-  function(req, res) {
-    // Successful authentication, redirect secrets.
-    res.redirect("http://localhost:3000");
-  });
+// app.get("/auth/google",
+//   passport.authenticate("google", { scope: ["profile"] })
+// );
+// app.get("/auth/google/callback",
+//   passport.authenticate("google", { failureRedirect: "http://localhost:3000" }),
+//   function(req, res) {
+//     // Successful authentication, redirect secrets.
+//     res.redirect("http://localhost:3000");
+//   });
 
-  app.get("/logout", function(req, res){
-    res.redirect("http://localhost:3000/");
-  });
+//   app.get("/logout", function(req, res){
+//     res.redirect("http://localhost:3000/");
+//   });
