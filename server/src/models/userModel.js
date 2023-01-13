@@ -11,7 +11,11 @@ const userSchema = new mongoose.Schema({
     secret: String
 });
 
-userSchema.plugin(passportLocalMongoose);
-userSchema.plugin(findOrCreate);
+ userSchema.plugin(passportLocalMongoose);
+ userSchema.plugin(findOrCreate);
 
 const User = new mongoose.model('User', userSchema);
+
+//exporting the module
+
+ module.exports =  mongoose.model('User', userSchema);

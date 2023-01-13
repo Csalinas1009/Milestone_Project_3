@@ -59,7 +59,9 @@ passport.use(new GoogleStrategy({
     passReqToCallback: true
 }, authUser));
 
-mongoose.connect('mongodb://localhost:27017/MileStone3').then(() => { console.log('Connected to DB!') });
+// connecting to MongoAtlas
+
+mongoose.connect('mongodb+srv://admin:admin@cluster0.fnw7zkg.mongodb.net/test').then(() => { console.log('Connected to DB!') });
 
 // const userSchema = new mongoose.Schema({
 //     username: String,
