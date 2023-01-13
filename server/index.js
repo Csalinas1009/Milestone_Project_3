@@ -59,7 +59,8 @@ passport.use(new GoogleStrategy({
     passReqToCallback: true
 }, authUser));
 
-mongoose.connect('mongodb://localhost:27017/MileStone3').then(() => { console.log('Connected to DB!') });
+mongoose.connect('mongodb+srv://csalinas:mp3@mp3.fzxnlmz.mongodb.net/test').then(() => { console.log('Connected to DB!') }); 
+
 
 // const userSchema = new mongoose.Schema({
 //     username: String,
@@ -77,6 +78,7 @@ mongoose.connect('mongodb://localhost:27017/MileStone3').then(() => { console.lo
 passport.serializeUser((user, done) => {
     console.log(`\n--------> Serialize User:`)
     console.log(user)
+    
     // The USER object is the 'authenticated user' from the done() in authUser function.
     // serializeUser() will attach this user to 'req.session.passport.user.{user}', so that it is tied to the session object for each session.  
 

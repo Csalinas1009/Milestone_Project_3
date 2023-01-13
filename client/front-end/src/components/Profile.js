@@ -5,11 +5,15 @@ import defaultProfileIcon from '../images/default_profile.jpg'
 
 
 function Profile() {
+    
+    
+
     const [userDetails, setUserDetails] = useState({
         name: 'Name Here',
         about: 'Write Something About Yourself!',
     })
 
+    
     const updateUserDetails = (event) => {
         event.preventDefault()
         setUserDetails({
