@@ -1,7 +1,8 @@
 import React from 'react'
 import '../styles/styles.css'
 import { useState } from 'react'
-import defaultProfileIcon from '../images/default_profile.jpg'
+import getPhotoUrl from 'get-photo-url'
+import defaultProfileIcon from '../images/profile_pic.png'
 
 
 function Profile() {
@@ -13,13 +14,24 @@ function Profile() {
         about: 'Write Something About Yourself!',
     })
 
+
     
+    const [editFormIsOpen, setEditFormIsOpen] = useState(false)
+    const [profilePhoto, setProfilePhoto] = useState(defaultProfileIcon)
+
+
     const updateUserDetails = (event) => {
         event.preventDefault()
         setUserDetails({
             name: event.target.nameOfUser.value,
             about: event.target.aboutUser.value,
         })
+        setEditFormIsOpen(false)
+    }
+
+    const updateProfilePhoto = async() => {
+        const newProfilePhoto = await getPhotoUrl('#profilePhotoInput')
+        setProfilePhoto(newProfilePhoto)
     }
 
     const editForm = (
@@ -27,20 +39,26 @@ function Profile() {
             <input type="text" id="" name="nameOfUser" placeholder="Your Name" />
             <input type="text" id="" name="aboutUser" placeholder="About You" />
             <br />
-            <button type='button' className='cancel-button'>Cancel</button>
+            <button type='button' className='cancel-button' onClick={() => setEditFormIsOpen(false)}>Cancel</button>
             <button type='submit' className='save-button'>Save</button>
         </form>
     )
+
+    const editButton = <button onClick={() => setEditFormIsOpen(true)}>Edit</button>
+
     return (
         <section className="profile">
-            <><div className='profile-photo' role="button" title="Change Photo">
-                <img style={{ height: '150px', width: '150px', borderRadius: '100px' }} src={defaultProfileIcon} alt="profile" />
-            </div><div className='info'>
+            <input type="file" accept='images/*' style={{visibility:"hidden"}} name='photo' id="profilePhotoInput" />
+            <label htmlFor='profilePhotoInput' onClick={updateProfilePhoto}>
+            <div className='profile-photo' role="button" title="Change Photo">
+                <img src={profilePhoto} alt="profile" />
+            </div>
+            </label>
+            <div className='info'>
                     <p className='name'>{userDetails.name}</p>
                     <p className="about">{userDetails.about}</p>
-                    <button>Edit</button>
-                    {editForm}
-                </div></>
+                    {editFormIsOpen ? editForm : editButton}
+            </div>
         </section>
     )
 }
