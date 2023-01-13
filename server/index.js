@@ -59,9 +59,14 @@ passport.use(new GoogleStrategy({
     passReqToCallback: true
 }, authUser));
 
+
+mongoose.connect('mongodb+srv://csalinas:mp3@mp3.fzxnlmz.mongodb.net/test').then(() => { console.log('Connected to DB!') }); 
+
+
 // connecting to MongoAtlas
 
 mongoose.connect('mongodb+srv://admin:admin@cluster0.fnw7zkg.mongodb.net/test').then(() => { console.log('Connected to DB!') });
+
 
 // const userSchema = new mongoose.Schema({
 //     username: String,
@@ -79,6 +84,7 @@ mongoose.connect('mongodb+srv://admin:admin@cluster0.fnw7zkg.mongodb.net/test').
 passport.serializeUser((user, done) => {
     console.log(`\n--------> Serialize User:`)
     console.log(user)
+    
     // The USER object is the 'authenticated user' from the done() in authUser function.
     // serializeUser() will attach this user to 'req.session.passport.user.{user}', so that it is tied to the session object for each session.  
 

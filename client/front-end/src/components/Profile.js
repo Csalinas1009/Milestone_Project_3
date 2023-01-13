@@ -6,13 +6,19 @@ import defaultProfileIcon from '../images/profile_pic.png'
 
 
 function Profile() {
+    
+    
+
     const [userDetails, setUserDetails] = useState({
         name: 'Name Here',
         about: 'Write Something About Yourself!',
     })
 
+
+    
     const [editFormIsOpen, setEditFormIsOpen] = useState(false)
     const [profilePhoto, setProfilePhoto] = useState(defaultProfileIcon)
+
 
     const updateUserDetails = (event) => {
         event.preventDefault()
