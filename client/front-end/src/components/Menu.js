@@ -3,6 +3,7 @@ import home from '../images/home.png';
 import compass from '../images/compass.png';
 import notification from '../images/notification.png';
 import '../styles/styles.css'
+import Profile from './Profile';
 function Menu() {
   return (
     <div className='menu'>
