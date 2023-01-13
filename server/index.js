@@ -59,6 +59,8 @@ passport.use(new GoogleStrategy({
     passReqToCallback: true
 }, authUser));
 
+// connecting to MongoAtlas
+
 mongoose.connect('mongodb+srv://admin:admin@cluster0.fnw7zkg.mongodb.net/test').then(() => { console.log('Connected to DB!') });
 
 // const userSchema = new mongoose.Schema({
