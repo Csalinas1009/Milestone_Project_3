@@ -41,7 +41,7 @@ function Profile() {
     const editButton = <button onClick={() => setEditFormIsOpen(true)}>Edit</button>
 
     return (
-        <section className="profile">
+        <section className="profile-profile">
             <input type="file" accept='images/*' style={{visibility:"hidden"}} name='photo' id="profilePhotoInput" />
             <label htmlFor='profilePhotoInput' onClick={updateProfilePhoto}>
             <div className='profile-photo' role="button" title="Change Photo">

@@ -9,6 +9,7 @@ function App() {
   //might have to use Axio again for image uploading, or we could use another tool for this.
   
   return (
+    <div className='wrapper'>
     <><Navigation />
       <div>
       <div className='container'>
@@ -16,6 +17,7 @@ function App() {
       </div>
       <Gallery />
     </div></>
+    </div>
   )
 }
 
