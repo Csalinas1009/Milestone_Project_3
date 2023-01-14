@@ -1,26 +1,42 @@
 import React from 'react'
 import '../styles/styles.css'
-// import { useState } from 'react'
-// import defaultProfileIcon from '../images/default_profile.jpg'
+import { useState } from 'react'
+import getPhotoUrl from 'get-photo-url'
+import defaultProfileIcon from '../images/profile_pic.png'
 
 
 function Profile({name, email, img}) {
     
     
 
+    const [userDetails, setUserDetails] = useState({
+        name: 'Name Here',
+        about: 'Write Something About Yourself!',
+    })
+
 
 
     
-    // const updateUserDetails = (event) => {
-    //     event.preventDefault()
-    //     setUserDetails({
-    //         name: event.target.nameOfUser.value,
-    //         about: event.target.aboutUser.value,
-    //     })
-    // }
+    const [editFormIsOpen, setEditFormIsOpen] = useState(false)
+    const [profilePhoto, setProfilePhoto] = useState(defaultProfileIcon)
+
+
+    const updateUserDetails = (event) => {
+        event.preventDefault()
+        setUserDetails({
+            name: event.target.nameOfUser.value,
+            about: event.target.aboutUser.value,
+        })
+        setEditFormIsOpen(false)
+    }
+
+    const updateProfilePhoto = async() => {
+        const newProfilePhoto = await getPhotoUrl('#profilePhotoInput')
+        setProfilePhoto(newProfilePhoto)
+    }
 
     const editForm = (
-        <form className='edit-profile-form'>
+        <form className='edit-profile-form' onSubmit={(e) => updateUserDetails(e)}>
             <input type="text" id="" name="nameOfUser" placeholder="Your Name" />
             <input type="text" id="" name="aboutUser" placeholder="About You" />
             <br />
@@ -33,18 +49,19 @@ function Profile({name, email, img}) {
 
     return (
         <section className="profile">
-            <><div className='profile-photo' role="button" title="Change Photo">
-                <img style={{ height: '150px', width: '150px', borderRadius: '100px' }} src={img} alt='pfp'></img>
-            </div><div className='info'>
+            <input type="file" accept='images/*' style={{visibility:"hidden"}} name='photo' id="profilePhotoInput" />
+            <label htmlFor='profilePhotoInput' onClick={updateProfilePhoto}>
+            <div className='profile-photo' role="button" title="Change Photo">
+                <img src={img} alt="profile" />
+            </div>
+            </label>
+            <div className='info'>
                     <p className='name'>{name}</p>
                     <p className="about">{email}</p>
-                    <button>Edit</button>
-                    {editForm}
-                </div></>
+                    {editFormIsOpen ? editForm : editButton}
+            </div>
         </section>
     )
 }
-
-
 
 export default Profile
