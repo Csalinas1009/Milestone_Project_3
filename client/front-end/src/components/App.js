@@ -11,9 +11,7 @@ import jwt_decode from 'jwt-decode';
 
 function App() {
   
-  const [user, setUser] = useState({});
-
-
+  const [user, setUser] = useState({})
 
 
   function handleCallbackResponse(response) {
@@ -22,6 +20,8 @@ function App() {
           console.log(userObject)
           setUser(userObject);
           document.getElementById('signInDiv').hidden = true;
+                          
+      
       }
 
 
@@ -45,15 +45,20 @@ function App() {
   
 
   return (
-    <div className='wrapper'>
-    <><Navigation />
-      <div>
+    <><div id='signInDiv' className='signInDiv'></div>
+      <Navigation /><div>
       <div className='container'>
-        <Profile/>
+        <Profile
+        name={user.name}
+        email={user.email}
+        img={user.picture}
+        />
       </div>
       <Gallery />
-    </div></>
     </div>
+    <UploadWidget/>
+    </>
+    
   )
 }
 

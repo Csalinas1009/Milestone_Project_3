@@ -1,5 +1,4 @@
 import React from 'react'
-import '../styles/styles.css'
 import { useEffect, useRef } from 'react'
 
 function UploadWidget() {
@@ -19,7 +18,7 @@ function UploadWidget() {
   }, [])
   
   return (
-    <button className="add-button" onClick={() => widgetRef.current.open()}>+</button>
+    <button onClick={() => widgetRef.current.open()}>Upload</button>
   )
 }
 
