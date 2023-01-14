@@ -133,16 +133,17 @@ body {
     background-color: #890000;
   }
 
-.google-button {
-=======
-.signInDiv { 
 
+
+.signInDiv{ 
+    
     position: relative;
     display: flex;
     top: .5rem;
     z-index: 2;    
 
 }
+
 
 
 .login-text {
