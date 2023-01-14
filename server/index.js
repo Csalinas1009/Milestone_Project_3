@@ -59,7 +59,13 @@ passport.use(new GoogleStrategy({
     passReqToCallback: true
 }, authUser));
 
+
 mongoose.connect('mongodb+srv://csalinas:mp3@mp3.fzxnlmz.mongodb.net/test').then(() => { console.log('Connected to DB!') }); 
+
+
+// connecting to MongoAtlas
+
+mongoose.connect('mongodb+srv://admin:admin@cluster0.fnw7zkg.mongodb.net/test').then(() => { console.log('Connected to DB!') });
 
 
 // const userSchema = new mongoose.Schema({
