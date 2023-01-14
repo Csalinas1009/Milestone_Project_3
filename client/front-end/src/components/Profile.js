@@ -32,16 +32,29 @@ function Profile({name, email, img}) {
     const editButton = <button className='edit-button'onClick={() => setEditFormIsOpen(true)}>Edit Bio</button>
 
     return (
-        <section className="profile">
-            <><div className='profile-photo' role="button" title="Change Photo">
-                <img style={{ height: '150px', width: '150px', borderRadius: '100px' }} src={img} alt='pfp'></img>
-            </div><div className='info'>
-                    <p className='name'>{name}</p>
-                    <p className="about">{email}</p>
-                    <button>Edit</button>
-                    {editForm}
-                </div></>
+        <><><section className="profile">
+            <input type="file" accept='images/*' style={{ visibility: "hidden" }} name='photo' id="profilePhotoInput" />
+            <label htmlFor='profilePhotoInput' onClick={updateProfilePhoto}>
+                <div className='profile-photo' role="button" title="Change Photo">
+
+                    <img src={img} alt="profile" />
+                </div>
+            </label>
+            <div className='info'>
+                <p className='name'>{name}</p>
+                <p className="about">{email}</p>
+
+                <img src={profilePhoto} alt="profile" />
+            </div>
         </section>
+
+        </><div className='info'>
+                <p className='name'>{userDetails.name}</p>
+                <p className="about">{userDetails.about}</p>
+                main
+                {editFormIsOpen ? editForm : editButton}
+            </div></>
+        
     )
 }
 
