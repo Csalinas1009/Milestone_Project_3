@@ -45,9 +45,8 @@ function App() {
   
 
   return (
-
-    <><div className='wrapper'>
-      <Navigation />
+    <div className='wrapper'>
+    <><Navigation />
       <div>
 
         <div id='signInDiv' className='signInDiv'></div>
@@ -63,9 +62,9 @@ function App() {
 
         </div>
       </div>
-
-    </div><UploadWidget /></>
-
+      <Gallery />
+    </div></>
+    </div>
   )
 }
 
