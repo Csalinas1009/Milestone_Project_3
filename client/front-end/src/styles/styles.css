@@ -71,11 +71,8 @@ body {
     width: 100%;
     width: 100%;
     display: grid;
-    grid-gap: 10px;
-    grid-template-columns: 16rem 16rem;
-    position: relative;
+    grid-template-columns: 16rem 16rem 16rem 16rem;
     justify-content: center;
-    top: 230px;
 }
 
 .profile-profile {
@@ -90,6 +87,67 @@ body {
 .profile {
     display: flex;
     margin-top: 6em;
+}
+
+.profile-photo img {
+    width: 100%;
+    position: relative;
+    right: 100px;
+    border-radius: 50%;
+  }
+
+.info{
+  width: 100%;
+  padding: 7.5px 7.5px 5px;
+}
+
+  .profile-photo img:hover {
+    opacity: 0.7;
+  }
+  
+  .profile-info .name {
+    font-size: 1.7em;
+    color: #545454;
+    margin-bottom: 0;
+  }
+  
+  .profile-info .about {
+    font-size: 1.2em;
+    color: #545454;
+  }
+  
+  .profile-info button {
+    background-color: #0095f6;
+    color: #fff;
+    font-size: 1.1em;
+    width: 6em;
+    height: 2em;
+  }
+  
+  .profile-info button:hover {
+    background-color: #0081d6;
+  }
+  
+  .edit-profile-form input {
+    width: 50%;
+    height: 2em;
+    border: 0.1em solid #dbdbdb;
+    border-radius: 0.2em;
+    padding: 0.5em;
+    margin-top: 0.5em;
+  }
+  
+  .edit-profile-form button {
+    margin: 1em 1em 0 0;
+  }
+  
+  .edit-profile-form .cancel-button {
+    background-color: #890000;
+  }
+
+.google-button {
+    position: relative;
+    right: 900px;
 }
 
 .profile-photo img {
@@ -204,58 +262,18 @@ body {
     font-weight: 500;
 }
 
-.profile-info button {
-  background-color: #0095f6;
-  color: #fff;
-  font-size: 1.1em;
-  width: 6em;
-  height: 2em;
-}
-
-.add-button{
-  position: relative;
-  top: 30px;
-  left: 330px;
-  font-size: 100px;
-  background-color: transparent;
-  border: none;
-}
-
-@media screen and (max-width: 768px){
-  .add-button{
-    position: relative;
+@media only screen and(mid-width: 768px){
+  .wrapper {
+    width: 600px;
+    margin: 0 auto;
   }
 }
 
-@media screen and (min-width: 1030px){
+@media only screen and(mid-width: 1030px){
   .gallery {
     width: 100%;
     display: grid;
     grid-template-columns: 16rem 16rem 16rem 16rem;
     justify-content: center;
 }
-  .add-button{
-    position: relative;
-    top: 50px;
-    left: 1350px;
-    font-size: 100px;
-    background-color: transparent;
-    border: none;
 }
-  .info{
-    top: 150px;
-    position: relative;
-    left: 100px;
-    width: 100%;
-    padding: 7.5px 7.5px 5px;
-}
-
-.profile-photo img {
-  width: 200%;
-  position: relative;
-  top: 50px;
-  right: -300px;
-  border-radius: 50%;
-}
-}
-
