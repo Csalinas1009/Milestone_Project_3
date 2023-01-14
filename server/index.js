@@ -39,6 +39,10 @@ console.log('cors connected')
 
 
 
+const session = require('express-session')
+const passport = require('passport');
+const { collection } = require('./src/models/userModel');
+const GoogleStrategy = require('passport-google-oauth20').Strategy;
 
 //Middleware
 app.use(session({
@@ -63,9 +67,25 @@ passport.use(new GoogleStrategy({
     passReqToCallback: true
 }, authUser));
 
+
+// mongoose.connect('mongodb+srv://csalinas:mp3@mp3.fzxnlmz.mongodb.net/test').then(() => { console.log('Connected to DB!') }); 
+
+
 // connecting to MongoAtlas
 
-mongoose.connect('mongodb://localhost:27017/MileStone3').then(() => { console.log('Connected to DB!') });
+mongoose.connect('mongodb://localhost:27017/MileStone3');
+console.log('Connected to DB!');
+// const userSchema = new mongoose.Schema({
+//     username: String,
+//     name: String,
+//     googleId: String,
+//     secret: String
+// });
+
+// userSchema.plugin(passportLocalMongoose);
+// userSchema.plugin(findOrCreate);
+
+// const User = new mongoose.model('User', userSchema);
 
 
 passport.serializeUser((user, done) => {
