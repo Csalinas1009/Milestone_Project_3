@@ -11,12 +11,15 @@ import jwt_decode from 'jwt-decode'
 function App() {
   
   return (
-    <><Navigation /><div>
+    <div className='wrapper'>
+    <><Navigation />
+      <div>
       <div className='container'>
         <Profile/>
       </div>
       <Gallery />
     </div></>
+    </div>
   )
 }
 
