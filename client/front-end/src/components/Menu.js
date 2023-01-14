@@ -5,6 +5,7 @@ import notification from '../images/notification.png';
 import '../styles/styles.css'
 
 
+
 function Menu() {
   return (
     <div className='menu'>
