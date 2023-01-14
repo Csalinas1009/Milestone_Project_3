@@ -45,14 +45,8 @@ function App() {
   
 
   return (
-
-    <div className='wrapper'>
-    <><Navigation />
-      <div>
-
     <><div id='signInDiv' className='signInDiv'></div>
       <Navigation /><div>
-
       <div className='container'>
         <Profile
         name={user.name}
@@ -61,15 +55,10 @@ function App() {
         />
       </div>
       <Gallery />
-
-    </div></>
-    </div>
-
     </div>
     <UploadWidget/>
     </>
     
-
   )
 }
 
