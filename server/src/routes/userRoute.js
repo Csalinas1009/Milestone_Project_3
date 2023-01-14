@@ -49,7 +49,7 @@ router.delete("/:id", async (req, res)=>{
     }
 })
 
-//update pin
+//update user
 
 router.patch("/:id", async (req, res)=>{
     try{
