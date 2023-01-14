@@ -21,7 +21,7 @@ app.use('/api/comment', commentRoute);
 app.use('/api/article', articleRoute)
 
 
-app.get('/', (req,res) => {
+app.get('/', (req, res) => {
     res.send('testing once again')
 })
 
@@ -33,7 +33,8 @@ console.log('cors connected')
 
 
 const session = require('express-session')
-const passport = require('passport')
+const passport = require('passport');
+const { collection } = require('./src/models/userModel');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 
 //Middleware
@@ -60,14 +61,13 @@ passport.use(new GoogleStrategy({
 }, authUser));
 
 
-mongoose.connect('mongodb+srv://csalinas:mp3@mp3.fzxnlmz.mongodb.net/test').then(() => { console.log('Connected to DB!') }); 
+// mongoose.connect('mongodb+srv://csalinas:mp3@mp3.fzxnlmz.mongodb.net/test').then(() => { console.log('Connected to DB!') }); 
 
 
 // connecting to MongoAtlas
 
-mongoose.connect('mongodb+srv://admin:admin@cluster0.fnw7zkg.mongodb.net/test').then(() => { console.log('Connected to DB!') });
-
-
+mongoose.connect('mongodb://localhost:27017/MileStone3');
+console.log('Connected to DB!');
 // const userSchema = new mongoose.Schema({
 //     username: String,
 //     name: String,
@@ -84,7 +84,7 @@ mongoose.connect('mongodb+srv://admin:admin@cluster0.fnw7zkg.mongodb.net/test').
 passport.serializeUser((user, done) => {
     console.log(`\n--------> Serialize User:`)
     console.log(user)
-    
+
     // The USER object is the 'authenticated user' from the done() in authUser function.
     // serializeUser() will attach this user to 'req.session.passport.user.{user}', so that it is tied to the session object for each session.  
 
@@ -122,6 +122,15 @@ showlogs = (req, res, next) => {
     console.log(`req.session.id -------> ${req.session.id}`)
     console.log(`req.session.cookie -------> `)
     console.log(req.session.cookie)
+    db.MileStone3.users.insertOne([
+        { name: 'session.cookie' }
+    ])
+    console.log("Insertion Successful")
+    .catch(err); {
+
+    // If error occurred show the error message
+    console.log(err.Message);
+}
 
     console.log('===========================================\n')
 
