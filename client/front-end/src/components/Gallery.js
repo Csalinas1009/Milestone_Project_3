@@ -4,6 +4,7 @@ import Card from 'react-bootstrap/Card';
 
 function Gallery() {
 
+   
   // setting/testing Gallery, this should be an API call from BE once user uploads image? Pass down as a prop to this component from Parent? Need to look into this.
   const cardData = [
     {
