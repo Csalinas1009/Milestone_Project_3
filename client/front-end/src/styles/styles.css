@@ -18,7 +18,6 @@ body {
 .navigation {
     position: fixed;
     top: 0;
-    z-index: 2;
     background-color: white;
     width: 100%;
     border-bottom: 1px solid grey;
@@ -77,137 +76,10 @@ body {
     right: 900px;
 }
 
-.profile-photo img {
-    width: 100%;
+.signInDiv { 
     position: relative;
-    right: 100px;
-    border-radius: 50%;
-  }
+    display: flex;
+    top: .5rem;
+    z-index: 2;    
 
-.info{
-  width: 100%;
-  padding: 7.5px 7.5px 5px;
-}
-
-  .profile-photo img:hover {
-    opacity: 0.7;
-  }
-  
-  .profile-info .name {
-    font-size: 1.7em;
-    color: #545454;
-    margin-bottom: 0;
-  }
-  
-  .profile-info .about {
-    font-size: 1.2em;
-    color: #545454;
-  }
-  
-  .profile-info button {
-    background-color: #0095f6;
-    color: #fff;
-    font-size: 1.1em;
-    width: 6em;
-    height: 2em;
-  }
-  
-  .profile-info button:hover {
-    background-color: #0081d6;
-  }
-  
-  .edit-profile-form input {
-    width: 50%;
-    height: 2em;
-    border: 0.1em solid #dbdbdb;
-    border-radius: 0.2em;
-    padding: 0.5em;
-    margin-top: 0.5em;
-  }
-  
-  .edit-profile-form button {
-    margin: 1em 1em 0 0;
-  }
-  
-  .edit-profile-form .cancel-button {
-    background-color: #890000;
-  }
-
-.google-button {
-    position: relative;
-    top: 10rem;
-    left: 50rem;
-    height: 50px;
-    border-width: 0;
-    background: rgb(240, 234, 234);
-    color: #737373;
-    border-radius: 5px;
-    white-space: nowrap;
-    box-shadow: 1px 1px 0px 1px rgba(0, 0, 0, 0.1);
-    transition-property: background-color, box-shadow;
-    transition-duration: 150ms;
-    transition-timing-function: ease-in-out;
-    padding: 0;
-    transform: scale(1.4);
-    margin-top: 100px;
-
-}
-
-.google-button:hover,
-.google-button:focus {
-    box-shadow: 1px 4px 5px 1px rgba(0, 0, 0, 0.2);
-    outline: none;
-    transform: scale(1.4) skewX(-0.4deg);
-}
-
-.google-button:active {
-    outline: none;
-    box-shadow: 1px 4px 5px 1px rgba(0, 0, 0, 0.3);
-    transition-duration: 10ms;
-}
-
-.google-button__icon {
-    display: inline-block;
-    vertical-align: middle;
-    margin: 0px 0 8px 8px;
-    width: 18px;
-    height: 18px;
-    box-sizing: border-box;
-}
-
-.google-button__icon--plus {
-    width: 27px;
-}
-
-.google-button__text {
-    display: inline-block;
-    vertical-align: middle;
-    padding: 0 24px;
-    font-size: 14px;
-    font-weight: bold;
-    font-family: 'Roboto', arial, sans-serif;
-}
-
-.login-text {
-    position: relative;
-    text-align: center;
-    right: 3.5rem;
-    top: 10rem;
-    font-weight: 500;
-}
-
-@media only screen and(mid-width: 768px){
-  .wrapper {
-    width: 600px;
-    margin: 0 auto;
-  }
-}
-
-@media only screen and(mid-width: 1030px){
-  .gallery {
-    width: 100%;
-    display: grid;
-    grid-template-columns: 16rem 16rem 16rem 16rem;
-    justify-content: center;
-}
 }
