@@ -5,19 +5,28 @@ import '../styles/styles.css'
 
 
 function Profile({name, email, img}) {
-    
-    
 
 
 
-    
-    // const updateUserDetails = (event) => {
-    //     event.preventDefault()
-    //     setUserDetails({
-    //         name: event.target.nameOfUser.value,
-    //         about: event.target.aboutUser.value,
-    //     })
-    // }
+
+
+    const [editFormIsOpen, setEditFormIsOpen] = useState(false)
+    const [profilePhoto, setProfilePhoto] = useState(defaultProfileIcon)
+
+
+    const updateUserDetails = (event) => {
+        event.preventDefault()
+        setUserDetails({
+            name: event.target.nameOfUser.value,
+            about: event.target.aboutUser.value,
+        })
+        setEditFormIsOpen(false)
+    }
+
+    const updateProfilePhoto = async() => {
+        const newProfilePhoto = await getPhotoUrl('#profilePhotoInput')
+        setProfilePhoto(newProfilePhoto)
+    }
 
     const editForm = (
         <form className='edit-profile-form'>
@@ -34,9 +43,9 @@ function Profile({name, email, img}) {
     return (
 
         <><section className="profile-profile">
-            <input type="file" accept='images/*' style={{ visibility: "hidden" }} name='photo' id="profilePhotoInput" />
+            <input type="file" accept='images/' style={{ visibility: "hidden" }} name='photo' id="profilePhotoInput" />
         </section><section className="profile">
-                <input type="file" accept='images/*' style={{ visibility: "hidden" }} name='photo' id="profilePhotoInput" />
+                <input type="file" accept='images/' style={{ visibility: "hidden" }} name='photo' id="profilePhotoInput" />
 
                 <label htmlFor='profilePhotoInput' onClick={updateProfilePhoto}>
                     <div className='profile-photo' role="button" title="Change Photo">
@@ -46,10 +55,9 @@ function Profile({name, email, img}) {
             </section><div className='info'>
                 <p className='name'>{userDetails.name}</p>
                 <p className="about">{userDetails.about}</p>
-                main
                 {editFormIsOpen ? editForm : editButton}
             </div></>
-        
+
     )
 }
 

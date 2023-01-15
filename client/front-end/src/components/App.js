@@ -45,20 +45,27 @@ function App() {
   
 
   return (
-    <><div id='signInDiv' className='signInDiv'></div>
-      <Navigation /><div>
-      <div className='container'>
-        <Profile
-        name={user.name}
-        email={user.email}
-        img={user.picture}
-        />
+
+    <><div className='wrapper'>
+      <Navigation />
+      <div>
+
+        <div id='signInDiv' className='signInDiv'></div>
+        <Navigation /><div>
+
+          <div className='container'>
+            <Profile
+              name={user.name}
+              email={user.email}
+              img={user.picture} />
+          </div>
+          <Gallery />
+
+        </div>
       </div>
-      <Gallery />
-    </div>
-    <UploadWidget/>
-    </>
-    
+
+    </div><UploadWidget /></>
+
   )
 }
 
