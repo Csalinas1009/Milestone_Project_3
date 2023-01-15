@@ -1,6 +1,6 @@
 # Milestone_Project_3
 
-Welcome to InstaFruad! This is the mono repo for our application!
+Welcome to Instafraud! This is the mono repo for our application!
 
 ## Getting Started
 This is a blog based application where a user can post and share their photos! (create, update, delete). Log in with your Google acount and share your photos.
