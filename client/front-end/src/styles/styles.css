@@ -144,14 +144,20 @@ body {
 
 }
 
-
-
 .login-text {
     position: relative;
     text-align: center;
     right: 3.5rem;
     top: 10rem;
     font-weight: 500;
+}
+
+.profile-info button {
+  background-color: #0095f6;
+  color: #fff;
+  font-size: 1.1em;
+  width: 6em;
+  height: 2em;
 }
 
 @media only screen and(mid-width: 768px){
