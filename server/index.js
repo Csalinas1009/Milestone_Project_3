@@ -2,14 +2,22 @@ const express = require('express');
 const app = express()
 const cors = require('cors');
 const userRoute = require('./src/routes/userRoute');
-const commentRoute = require('./src/routes/commentRoute');
-const articleRoute = require('./src/routes/articleRoute');
 const mongoose = require('mongoose')
-const passportLocalMongoose = require('passport-local-mongoose')
-const findOrCreate = require('mongoose-findorcreate')
 require('dotenv').config()
+const session = require('express-session')
+const passport = require('passport')
+const GoogleStrategy = require('passport-google-oauth20').Strategy;
+
+//build path
+const path = require("path");
+app.use(express.static(path.resolve(__dirname, '../client/front-end/build')));
+app.use(express.static("public"));
 
 
+app.use((req, res, next) => {
+    res.sendFile(path.join(__dirname, "..", "/client/front-end/build", "index.html"));
+  });
+  
 
 //middleware
 app.use(express.json())
@@ -17,8 +25,7 @@ app.use(cors())
 
 //routes
 app.use('/api/user', userRoute);
-app.use('/api/comment', commentRoute);
-app.use('/api/article', articleRoute)
+
 
 
 app.get('/', (req, res) => {
@@ -32,10 +39,6 @@ console.log('cors connected')
 
 
 
-const session = require('express-session')
-const passport = require('passport');
-const { collection } = require('./src/models/userModel');
-const GoogleStrategy = require('passport-google-oauth20').Strategy;
 
 //Middleware
 app.use(session({
@@ -63,19 +66,6 @@ passport.use(new GoogleStrategy({
 // connecting to MongoAtlas
 
 mongoose.connect('mongodb://localhost:27017/MileStone3').then(() => { console.log('Connected to DB!') });
-
-
-// const userSchema = new mongoose.Schema({
-//     username: String,
-//     name: String,
-//     googleId: String,
-//     secret: String
-// });
-
-// userSchema.plugin(passportLocalMongoose);
-// userSchema.plugin(findOrCreate);
-
-// const User = new mongoose.model('User', userSchema);
 
 
 passport.serializeUser((user, done) => {
@@ -141,7 +131,7 @@ app.get('/auth/google',
     passport.authenticate('google', {
         scope:
             ['email', 'profile']
-    }
+}
     ));
 
 app.get('/auth/google/callback',
