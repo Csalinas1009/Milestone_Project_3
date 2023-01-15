@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const app = express()
 
 app.use(session({
   secret: "Our little secret.",
@@ -8,7 +9,7 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-mongoose.connect('mongodb://localhost:27017/MileStone3', { useNewUrlParser: true, useUnifiedTopology: true });
+
 
 
 const userSchema = new mongoose.Schema({
