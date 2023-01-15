@@ -14,7 +14,6 @@ function App() {
   const [user, setUser] = useState({});
 
 
-  //https://api.cloudinary.com/v1_1/dnvcvykye                                                                       /image/get
 
 
   function handleCallbackResponse(response) {
@@ -23,8 +22,6 @@ function App() {
           console.log(userObject)
           setUser(userObject);
           document.getElementById('signInDiv').hidden = true;
-                          
-      
       }
 
 
