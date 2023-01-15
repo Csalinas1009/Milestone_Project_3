@@ -2,8 +2,7 @@ const express = require('express');
 const app = express()
 const cors = require('cors');
 const userRoute = require('./src/routes/userRoute');
-const commentRoute = require('./src/routes/commentRoute');
-const articleRoute = require('./src/routes/articleRoute');
+
 const mongoose = require('mongoose')
 const passportLocalMongoose = require('passport-local-mongoose')
 const findOrCreate = require('mongoose-findorcreate')
@@ -17,8 +16,7 @@ app.use(cors())
 
 //routes
 app.use('/api/user', userRoute);
-app.use('/api/comment', commentRoute);
-app.use('/api/article', articleRoute)
+
 
 
 app.get('/', (req,res) => {
