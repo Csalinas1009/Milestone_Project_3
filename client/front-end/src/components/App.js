@@ -47,7 +47,7 @@ function App() {
   return (
 
 
-    <><><div className='wrapper'>
+    <><div className='wrapper'>
       <Navigation />
       <div>
 
@@ -65,18 +65,7 @@ function App() {
         </div>
       </div>
 
-    </div><UploadWidget /></><><div id='signInDiv' className='signInDiv'></div>
-        <Navigation /><div>
-          <div className='container'>
-            <Profile
-              name={user.name}
-              email={user.email}
-              img={user.picture} />
-          </div>
-          <Gallery />
-        </div>
-        <UploadWidget />
-      </></>
+    </div><UploadWidget /><div id='signInDiv' className='signInDiv'></div><Navigation /></>
     
 
   )
