@@ -49,9 +49,15 @@ function Profile({name, email, img}) {
     return (
 
         <><section className="profile-profile">
+
             <input type="file" accept='images/' style={{ visibility: "hidden" }} name='photo' id="profilePhotoInput" />
         </section><section className="profile">
                 <input type="file" accept='images/' style={{ visibility: "hidden" }} name='photo' id="profilePhotoInput" />
+
+            <input type="file" accept='images/*' style={{ visibility: "hidden" }} name='photo' id="profilePhotoInput" />
+        </section><section className="profile">
+                <input type="file" accept='images/*' style={{ visibility: "hidden" }} name='photo' id="profilePhotoInput" />
+
 
                 <label htmlFor='profilePhotoInput' onClick={updateProfilePhoto}>
                     <div className='profile-photo' role="button" title="Change Photo">
