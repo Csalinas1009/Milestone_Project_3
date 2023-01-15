@@ -66,7 +66,7 @@ passport.use(new GoogleStrategy({
 
 // connecting to MongoAtlas
 
-mongoose.connect('mongodb+srv://adminadmin@cluster0.fnw7zkg.mongodb.net/test').then(() => { console.log('Connected to DB!') });
+mongoose.connect('mongodb+srv://admin:admin@cluster0.fnw7zkg.mongodb.net/test').then(() => { console.log('Connected to DB!') });
 
 
 passport.serializeUser((user, done) => {
