@@ -71,8 +71,11 @@ body {
     width: 100%;
     width: 100%;
     display: grid;
-    grid-template-columns: 16rem 16rem 16rem 16rem;
+    grid-gap: 10px;
+    grid-template-columns: 16rem 16rem;
+    position: relative;
     justify-content: center;
+    top: 230px;
 }
 
 .profile-profile {
@@ -90,52 +93,81 @@ body {
 }
 
 .profile-photo img {
-    width: 100%;
+    width: 200%;
     position: relative;
-    right: 100px;
+    right: -450px;
     border-radius: 50%;
   }
 
+
+.edit-profile-form .name-input{
+  position: relative;
+  top: -50px;
+}
+
+.edit-profile-form .bio-input{
+  position: relative;
+  top: 0px;
+  right: 185px;
+}
+  
+.edit-button{
+  background-color: #77C3EC;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 10%;
+}
+
 .info{
+  top: 100px;
+  position: relative;
+  right: 175px;
   width: 100%;
   padding: 7.5px 7.5px 5px;
 }
-
 
   .profile-photo img:hover {
     opacity: 0.7;
   }
   
-  .profile-info .name {
+  .info .name {
     font-size: 1.7em;
     color: #545454;
     margin-bottom: 0;
+    border-bottom: 1px solid black;
   }
   
-  .profile-info .about {
+  .info .about {
     font-size: 1.2em;
     color: #545454;
+    position: relative;
+    top: 18px;
   }
   
-  .profile-info button {
-    background-color: #0095f6;
-    color: #fff;
-    font-size: 1.1em;
-    width: 6em;
-    height: 2em;
+  .info button {
+    background-color: #77C3EC;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 10%;
   }
   
-  .profile-info button:hover {
-    background-color: #0081d6;
+  .info button:hover {
+    background-color: #77C3EC;
   }
   
   .edit-profile-form input {
-    width: 50%;
-    height: 2em;
-    border: 0.1em solid #dbdbdb;
-    border-radius: 0.2em;
-    padding: 0.5em;
-    margin-top: 0.5em;
+    position: relative;
+    top: 5000px;
   }
   
   .edit-profile-form button {
@@ -143,7 +175,14 @@ body {
   }
   
   .edit-profile-form .cancel-button {
-    background-color: #890000;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 10%;
   }
 
 
@@ -173,19 +212,50 @@ body {
   height: 2em;
 }
 
-@media only screen and(mid-width: 768px){
-  .wrapper {
-    width: 600px;
-    margin: 0 auto;
+.add-button{
+  position: relative;
+  top: 30px;
+  left: 330px;
+  font-size: 100px;
+  background-color: transparent;
+  border: none;
+}
+
+@media screen and (max-width: 768px){
+  .add-button{
+    position: relative;
   }
 }
 
-@media only screen and(mid-width: 1030px){
+@media screen and (min-width: 1030px){
   .gallery {
     width: 100%;
     display: grid;
     grid-template-columns: 16rem 16rem 16rem 16rem;
     justify-content: center;
+}
+  .add-button{
+    position: relative;
+    top: 50px;
+    left: 1350px;
+    font-size: 100px;
+    background-color: transparent;
+    border: none;
+}
+  .info{
+    top: 150px;
+    position: relative;
+    left: 100px;
+    width: 100%;
+    padding: 7.5px 7.5px 5px;
+}
+
+.profile-photo img {
+  width: 200%;
+  position: relative;
+  top: 50px;
+  right: -300px;
+  border-radius: 50%;
 }
 }
 
