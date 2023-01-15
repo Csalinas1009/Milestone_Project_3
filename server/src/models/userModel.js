@@ -7,7 +7,7 @@ const userSchema = new mongoose.Schema({
     username: String,
     name: String,
     googleId: String,
-    secret: String
+    secret: String,
 });
 
  userSchema.plugin(passportLocalMongoose);
