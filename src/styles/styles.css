@@ -21,6 +21,7 @@ body {
     background-color: white;
     width: 100%;
     border-bottom: 1px solid grey;
+    z-index: 2;
 }
 
 .container {
@@ -59,13 +60,15 @@ body {
 }
 
 .gallery {
-    width: 100%;
-    display: grid;
-    grid-gap: 10px;
-    grid-template-columns: 16rem 16rem;
-    position: relative;
-    justify-content: center;
-    top: 230px;
+
+ display: flex;
+ flex-direction: 'row';
+ flex: 1;
+
+}
+
+.box {
+  margin: 20px;
 }
 
 .profile-profile {
@@ -123,6 +126,8 @@ body {
   }
   
   .info .name {
+    position: relative;
+    right: 50rem;
     font-size: 1.7em;
     color: #545454;
     margin-bottom: 0;
@@ -130,6 +135,8 @@ body {
   }
   
   .info .about {
+    position: relative;
+    right: 50rem;
     font-size: 1.2em;
     color: #545454;
     position: relative;
@@ -178,15 +185,16 @@ body {
     
     position: relative;
     display: flex;
-    top: .5rem;
-    z-index: 2;    
+    top: .5rem;   
 
 }
 
-
-
-
-
+.gallery{
+  max-width: 30%;
+  position: relative;
+  left: 50rem;
+  top: 20rem;
+}
 
 .login-text {
     position: relative;
@@ -220,12 +228,7 @@ body {
 }
 
 @media screen and (min-width: 1030px){
-  .gallery {
-    width: 100%;
-    display: grid;
-    grid-template-columns: 16rem 16rem 16rem 16rem;
-    justify-content: center;
-}
+
   .add-button{
     position: relative;
     top: 50px;
@@ -246,8 +249,10 @@ body {
   width: 200%;
   position: relative;
   top: 50px;
-  right: -300px;
+  right: -90px;
   border-radius: 50%;
 }
 }
+
+
 

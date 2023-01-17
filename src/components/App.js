@@ -7,13 +7,22 @@ import UploadWidget from './UploadWidget';
 import '../styles/styles.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import jwt_decode from 'jwt-decode';
+import Axios from 'axios';
 
 
 function App() {
   
   const [user, setUser] = useState({});
 
+  const [picture, setPicture] = useState("")
 
+  useEffect(() => {
+    Axios.get("https://instafraud.herokuapp.com/").then(
+      (response) => {
+        setPicture(response.data)
+      }
+    )
+  }, [])
 
 
   function handleCallbackResponse(response) {
@@ -47,7 +56,7 @@ function App() {
   return (
 
 
-    <><div className='wrapper'>
+    <div className='wrapper'>
       <Navigation />
       <div>
 
@@ -60,15 +69,27 @@ function App() {
               email={user.email}
               img={user.picture} />
           </div>
-          <Gallery />
+          {picture && picture.map((pic) => {
+            return (
+              <Gallery
+              pic={pic}
+              />
+            )
+          })}
+          
 
         </div>
       </div>
 
-    </div><UploadWidget /><div id='signInDiv' className='signInDiv'></div><Navigation /></>
+    <UploadWidget
+
+    />
+  </div>
+   
     
 
   )
 }
 
 export default App
+

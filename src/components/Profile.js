@@ -66,8 +66,8 @@ function Profile({name, email, img}) {
                 </label>
             </section><div className='info'>
 
-                <p className='name'>{userDetails.name}</p>
-                <p className="about">{userDetails.about}</p>
+                <p className='name'>{name}</p>
+                <p className="about">{email}</p>
 
                 {editFormIsOpen ? editForm : editButton}
             </div></>
