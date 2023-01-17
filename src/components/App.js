@@ -56,7 +56,11 @@ function App() {
   return (
 
 
+<<<<<<< HEAD:src/components/App.js
     <div className='wrapper'>
+=======
+<div className='wrapper'>
+>>>>>>> a8ee9ff790d0bee9c1c986f381864db8d107c70d:client/front-end/src/components/App.js
       <Navigation />
       <div>
 
@@ -81,15 +85,23 @@ function App() {
         </div>
       </div>
 
+<<<<<<< HEAD:src/components/App.js
     <UploadWidget
 
     />
   </div>
    
+=======
+    <UploadWidget />
+  </div>
+>>>>>>> a8ee9ff790d0bee9c1c986f381864db8d107c70d:client/front-end/src/components/App.js
     
 
   )
 }
 
 export default App
+<<<<<<< HEAD:src/components/App.js
 
+=======
+>>>>>>> a8ee9ff790d0bee9c1c986f381864db8d107c70d:client/front-end/src/components/App.js
