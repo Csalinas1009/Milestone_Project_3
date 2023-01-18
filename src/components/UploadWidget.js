@@ -17,7 +17,7 @@ function UploadWidget() {
     const formData = new FormData();
     formData.append("image", file)
     console.log(formData);
-    Axios.post("/image", formData).then((response) => {
+    Axios.post("https://instafraud.herokuapp.com/image", formData).then((response) => {
       console.log(response)
     })
     .catch(err=>console.log(err))
