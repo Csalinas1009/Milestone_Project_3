@@ -7,7 +7,7 @@ import '../styles/styles.css'
 
 
 function Gallery({pic}) {
-  //useState hook for setting up cards
+  
 
   
     return (
@@ -16,7 +16,7 @@ function Gallery({pic}) {
       {Array.from({ length: 4 }).map((_, idx) => (
         <Col>
           <Card>
-            <Card.Img variant="top" src={pic.imageUrl} />
+            <Card.Img variant="top" src={pic.imageUrl}/>
           </Card>
         </Col>
       ))}

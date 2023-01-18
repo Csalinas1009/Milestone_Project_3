@@ -1,55 +1,38 @@
-import React, { useState } from 'react';
-import Axios from 'axios';
+import React from 'react';
+import { useState } from 'react';
 import "../styles/styles.css"
+import Axios from 'axios';
 
 
 
 function UploadWidget() {
   
-  const [image, setImage] = useState("");
-  
-  const onChange = e => {
-    setImage(e.target.files[0]);
-  };
+  const [file, setFile] = useState()
 
-  const onSubmit = async (event) => {
-    event.preventDefault();
+  function handleSubmit(e) {
+    e.preventDefault()
+  }
+  
+  const uploadFile = () => {
     const formData = new FormData();
-    formData.append('file', image);
-    formData.append('upload_preset', "wxbhcxky");
-    try {
-      
-      const res = await Axios.post(`https://instafraud.herokuapp.com/image/`, formData);
-      const imageUrl = res.data.secure_url;
-      const image = await Axios.post('https://instafraud.herokuapp.com/image/', {
-        imageUrl
-      });
-     
-      setImage(image.data);
-    } catch (err) {
-      console.error(err);
-    }
-  };
-
-  
-  
+    formData.append("image", file)
+    console.log(formData);
+    Axios.post("/image", formData).then((response) => {
+      console.log(response)
+    })
+    .catch(err=>console.log(err))
+  }
   return(
-    <div className='upload-container'>
-  <><div className='widget'>
-      <div className='file-field input-field'>
-        <div className='btn'>
-          <input type='file' onChange={onChange} />
-        </div>
-        <div className='file-path-wrapper'>
-        </div>
-      </div>
-    </div><div>
-        <button onClick={onSubmit} className='btn center'>
-          submit
-        </button>
-      </div></>
-      </div>
+    <div>
+      <h1>file uploader</h1>
+      <input type="file" onChange={(e) =>{ setFile(e.target.files[0]); console.log(e.target.files[0])}}/>
+      <button onClick={() =>uploadFile()} onSubmit={handleSubmit}>upload file</button>
+    </div>
   )
 }
 
 export default UploadWidget;
+
+
+
+
