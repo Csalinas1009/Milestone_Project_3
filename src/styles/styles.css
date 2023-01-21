@@ -218,9 +218,7 @@ input[type="file"] {
 }
 
 .add-button{
-  position: relative;
-  top: 30px;
-  left: 330px;
+  position: fixed;
   font-size: 100px;
   background-color: transparent;
   border: none;
@@ -233,14 +231,17 @@ input[type="file"] {
 }
 
 .upload-container .custom-file-upload{
+  position: fixed;
+  bottom: 0;
+  right: 5em;
   font-size: 75px;
   cursor: pointer;
 }
 
 .upload-container .btn-center{
-  position: absolute;
-  bottom: -25px;
-  left: 10px;
+  position: fixed;
+  bottom: 1.5em;
+  right: 16em;
   font-size: 20px;
   background-color: lightblue;
   padding: 4px;
@@ -280,6 +281,5 @@ input[type="file"] {
   border-radius: 50%;
 }
 }
-
 
 
