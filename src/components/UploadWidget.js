@@ -38,14 +38,17 @@ function UploadWidget() {
   <><div className='widget'>
       <div className='file-field input-field'>
         <div className='btn'>
-          <input type='file' onChange={onChange} />
+          <label className='custom-file-upload'>
+            <input type='file' onChange={onChange} />
+              +
+          </label>
         </div>
         <div className='file-path-wrapper'>
         </div>
       </div>
     </div><div>
-        <button onClick={onSubmit} className='btn center'>
-          submit
+        <button onClick={onSubmit} className='btn-center'>
+          Post
         </button>
       </div></>
       </div>

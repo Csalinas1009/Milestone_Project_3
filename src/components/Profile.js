@@ -5,7 +5,7 @@ import getPhotoUrl from 'get-photo-url'
 import defaultProfileIcon from '../images/profile_pic.png'
 
 
-function Profile({name, email, img}) {
+function Profile({name, email, img, bio}) {
 
 
 
@@ -23,7 +23,6 @@ function Profile({name, email, img}) {
     const updateUserDetails = (event) => {
         event.preventDefault()
         setUserDetails({
-            name: event.target.nameOfUser.value,
             about: event.target.aboutUser.value,
         })
         setEditFormIsOpen(false)
@@ -33,18 +32,6 @@ function Profile({name, email, img}) {
         const newProfilePhoto = await getPhotoUrl('#profilePhotoInput')
         setProfilePhoto(newProfilePhoto)
     }
-
-    const editForm = (
-        <form className='edit-profile-form' onSubmit={(e) => updateUserDetails(e)}>
-            <input className='name-input' type="text" id="" name="nameOfUser" placeholder="Input Name" />
-            <input className='bio-input' type="text" id="" name="aboutUser" placeholder="About You" />
-            <br />
-            <button type='button' className='cancel-button' onClick={() => setEditFormIsOpen(false)}>Cancel</button>
-            <button type='submit' className='save-button'>Save</button>
-        </form>
-    )
-
-    const editButton = <button className='edit-button'onClick={() => setEditFormIsOpen(true)}>Edit Bio</button>
 
     return (
 
@@ -69,7 +56,6 @@ function Profile({name, email, img}) {
                 <p className='name'>{name}</p>
                 <p className="about">{email}</p>
 
-                {editFormIsOpen ? editForm : editButton}
             </div></>
 
     )

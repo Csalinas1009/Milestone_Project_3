@@ -15,6 +15,10 @@ body {
     min-width: fit-content;
 }
 
+input[type="file"] {
+  display: none;
+}
+
 .navigation {
     position: fixed;
     top: 0;
@@ -70,6 +74,7 @@ body {
 .box {
   margin: 20px;
 }
+
 
 .profile-profile {
     width: 100%;
@@ -192,8 +197,8 @@ body {
 .gallery{
   max-width: 30%;
   position: relative;
-  left: 50rem;
-  top: 20rem;
+  left: 40rem;
+  top: 10rem;
 }
 
 .login-text {
@@ -219,6 +224,28 @@ body {
   font-size: 100px;
   background-color: transparent;
   border: none;
+}
+
+.upload-container{
+  position: absolute;
+  top: 200px;
+  left: 1180px;
+}
+
+.upload-container .custom-file-upload{
+  font-size: 75px;
+  cursor: pointer;
+}
+
+.upload-container .btn-center{
+  position: absolute;
+  bottom: -25px;
+  left: 10px;
+  font-size: 20px;
+  background-color: lightblue;
+  padding: 4px;
+  border: none;
+  border-radius: 30%;
 }
 
 @media screen and (max-width: 768px){
