@@ -5,9 +5,9 @@ import "../styles/styles.css"
 
 
 function UploadWidget() {
-  
+
   const [image, setImage] = useState("");
-  
+
   const onChange = e => {
     setImage(e.target.files[0]);
   };
@@ -18,21 +18,21 @@ function UploadWidget() {
     formData.append('file', image);
     formData.append('upload_preset', "wxbhcxky");
     try {
-      
-      const res = await Axios.post(`https://instafraud.herokuapp.com/image/`, formData);
+
+      const res = await Axios.post('https://instafraud.herokuapp.com/image/', formData);
       const imageUrl = res.data.secure_url;
       const image = await Axios.post('https://instafraud.herokuapp.com/image/', {
         imageUrl
       });
-     
+
       setImage(image.data);
     } catch (err) {
       console.error(err);
     }
   };
 
-  
-  
+
+
   return(
     <div className='upload-container'>
   <><div className='widget'>
@@ -47,7 +47,7 @@ function UploadWidget() {
         </div>
       </div>
     </div><div>
-        <button onClick={onSubmit} className='btn-center'>
+    <button onClick={onSubmit} className='btn-center'>
           Post
         </button>
       </div></>
